@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+.container {
+    display: grid;
+    grid-template-columns: 10% 40% 40% 5%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        ". map restaurant ." 
+        ". . main ." 
+        "footer footer . . ";
+}
+.ml9 {
+    background-color: #d52e3f;
+    position: relative;
+    font-weight: 200;
+    font-size: 4em;
+    display: inline-flex;
+    justify-content: center;
+    height: 20vh;
+    width:100%;
+}
+
+    .ml9 .text-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding-top: 0.2em;
+        padding-bottom: 0.1em;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .ml9 .letter {
+        font-size: 10rem;
+        font-family: 'Niconne', cursive;
+        color: powderblue;
+        transform-origin: 40% 100%;
+        display: inline-flex;
+        line-height: 1em;
+        text-shadow: 5px 5px 0px #eb452b, 
+            10px 10px 0px #efa032, 
+            15px 15px 0px #46b59b, 
+            20px 20px 0px #017e7f, 
+            25px 25px 0px #052939, 
+            30px 30px 0px #c11a2b, 
+            35px 35px 0px #c11a2b, 
+            40px 40px 0px #c11a2b, 
+            45px 45px 0px #c11a2b;
+    }
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+    border: solid;
+    border-width: 10px;
+    border-color: lightgrey;
+    height: 90vh;
+    grid-area: map;
+    justify-self: stretch;
+    border-right-color:black
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    background-color: powderblue;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+.searchbox {
+    display: flex;
+    position: absolute;
+    background: white;
+    top: 26.3%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 30px;
+    border-radius: 30px;
+    padding: 5px
+}
+.randomizer {
+    display: flex;
+    position: absolute;
+    top: 24.5%;
+    left: 57%;
+    height:3.5%;
+}
+.randombtn {
+    font-family: 'Niconne', cursive;
+    font-size: 25px;
+    border: none;
+    background: white;
+    font-weight: 500;
+    color: #d52e3f;
+    outline: auto
+}
+.randomname{
+    display:flex;
+    position:absolute;
+    top:25%;
+    font-size:30px;
+    left:72%;
+}
+.controls {
+
+    font-family: 'Niconne', cursive;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #d52e3f;
+    font-size: 16px;
+    transition: 1s;
+    width: 240px;
+    font-weight: 700;
+}
+
+.searchbox:hover > .search-btn {
+    color: black;
+}
+.search-btn {
+    color:powderblue;
+    float:right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: White;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:0.9s;
+}
+.controls::-webkit-input-placeholder {
+    font-family: 'Niconne', cursive;
+    font-weight: 600;
+    color: #d52e3f;
+}
+.restaurant {
+    background-color: #708090;
+    overflow-y: scroll;
+    height: 90vh;
+    display: block;
+    width: 93%;
+    grid-area: restaurant;
+    border: solid;
+    border-width: 10px;
+    border-color: grey;
+    border-left-color: darkgrey;
+    scroll-behavior: smooth;
+}
+.submitbutton{
+    border:none;
+    float:right;
+    display:flex;
+    width:0px
+}
+.picture {
+    height: 15em;
+    border: solid;
+    border-width: 10px;
+    border-color: white;
+}
+.allrest {
+    height: 30vh;
+    width: 15vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 7% 75%;
+    grid-template-areas:
+        ". btn url" 
+        "rating image price ";
+}
+
+.pricediv {
+    align-self: center;
+    justify-self: center;
+    grid-area: price;
+}
+.pricetext{
+    font-size: 3rem;
+    font-family: 'Niconne', cursive;
+    color: powderblue;
+    text-shadow: 2px 2px 0px #eb452b, 
+        4px 4px 0px #efa032, 
+        6px 6px 0px #46b59b, 
+        8px 8px 0px #428071,
+        10px 10px 0px #535a61,
+        12px 12px 0px #535a61;
+}
+.rating {
+    align-self:center;
+    justify-self: center;
+    grid-area: rating;
+    font-size: 3rem;
+    font-family: 'Niconne', cursive;
+    color: powderblue;
+    text-shadow: 2px 2px 0px #eb452b, 
+        4px 4px 0px #efa032, 
+        6px 6px 0px #46b59b, 
+        8px 8px 0px #428071,
+        10px 10px 0px #535a61,
+        12px 12px 0px #535a61;
+}
+.locationbtn{
+    grid-area:btn
+}
+.image {
+    grid-area: image;
+    justify-self: center;
+    overflow:hidden;
+}
+.url{
+    grid-area:url;
+}
+.Namebox {
+    font-weight:bold;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    background-color: #d52e3f;
+    font-size: 1.5em;
+    align-items: center;
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg,#FF69B4,blue,#FF69B4,purple, blue,purple,#FF69B4);
+    background-repeat: no-repeat;
+    background-size: 85%;
+    animation: animate 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
+}
+@keyframes animate {
+    0% {
+        background-position: 15%;
+    }
+
+    50% {
+        background-position: 85%;
+    }
+
+    100% {
+        background-position: 15%;
+    }
+}
+/*.menu {
+
+    font-family: 'Niconne', cursive;
+    padding-bottom: 1em;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+
+}*/
+.name{
+    background-color:white;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+
+.menu {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    font-size: 120px;
+    letter-spacing: 0.1em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 8px 8px powderblue, 20px 20px #000000;
+}

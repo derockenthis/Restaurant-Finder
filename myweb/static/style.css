@@ -1,0 +1,87 @@
+body{
+    background-color:white;
+}
+
+div {
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    overflow: hidden;
+    background: linear-gradient(90deg,white, red, orange, yellow, white);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    animation: createBox 4s ease;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
+}
+@keyframes createBox{
+    0%{
+        background-size:0%;
+    }
+    100%{
+        background-size:100%
+    }
+}
+
+.Allyson {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.Allyson {
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, white,#FF69B4,purple, blue,white);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(0,0,0,0);
+}
+
+@keyframes animate {
+    0% {
+        background-position: -50%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+
+    100% {
+        background-position: -50%;
+    }
+}
+
+.Derek {
+    color: red;
+
+    @keyframes animate {
+        0% {
+            background-position: -100%;
+        }
+
+        50% {
+            background-position: 500%;
+        }
+
+        100% {
+            background-position: -150%;
+        }
+    }
+}
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/06469fdd8d.js" crossorigin="anonymous"></script>
+    {% load static %}
+</head>
+<body>
+    <!--header-->
+    <h1 class="ml9">
+        <span class="text-wrapper">
+            <span class="letters">Random Restaurant</span>
+        </span>
+    </h1>
+    <!--header-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="{% static 'Code.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'thursday.css' %}" />
+    <p></p>
+
+    <!--<button onclick="typeWriter()">Click me</button>
+    <p id="demo"></p>
+    <script>
+        var i = 0;
+        var speed = 100;
+        var txt = 'Allyson is mean'
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById('demo').innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+    </script>-->
+    <div class="container">
+        <div class="restaurant">
+            <div class="menu">The Menu</div>
+            {% for name1 in num %}
+            <div id="{{name1.name}}">
+                <a href="{{name1.url}}" target="_blank">
+                    <div class="name">
+                        <div class="Namebox">{{name1.name}}</div>
+                    </div>
+                </a>
+                <div class="allrest">
+                    <div class="pricediv">
+                        <p class="pricetext">
+                            Price: {{name1.price}}
+                        </p>
+                    </div>
+                    <p class="rating">Rating: {{name1.rating}}</p>
+                    <button class="locationbtn"
+                            onclick="switchmap('{{name1.coordinates.latitude}}','{{name1.coordinates.longitude}}')"
+                            id="{{name1.location.address1}}">
+                        {{name1.location.address1}}
+                    </button>
+                    <div class="image">
+                        <a href="{{name1.image_url}}" target="_blank">
+                            <img src="{{name1.image_url}}" class="picture" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <script>
+            function switchmap(lat, lng)
+        </script>
+        <div class="randomizer">
+            <button class="randombtn" onclick="randomint()">
+                Click for random restaurant:
+            </button>
+        </div>
+        <a href="#" class ="randomname"id="list"></a>
+        <script>
+            function randomint() {
+                var data = JSON.parse("{{listofr|escapejs}}");
+                dataNode = document.getElementById('list');
+                length = data.length;
+                rando = Math.floor(Math.random() * length)
+                dataNode.setAttribute("href", "#"+data[rando])
+                dataNode.innerHTML = data[rando];
+            }
+        </script>
+        <!--button-->
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="searchbox">
+                <input id=""
+                       class="controls"
+                       type="text"
+                       name="location"
+                       placeholder="Type To Search" />
+                <a class="search-btn">
+                    <i class="fas fa-search-location"> </i>
+                </a>
+                <input class="submitbutton" type="submit" value="Submit" style="visibility: hidden" ;>
+            </div>
+        </form>
+        <!--button-->
+
+        <div id="map"></div>
+        <!-- Replace the value of the key parameter with your own API key. -->
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3U03bA6eAzG53dhxWEByK7wp2mvASLaU&libraries=places&callback=initMap">
+                                                 //heres the key: AIzaSyA3U03bA6eAzG53dhxWEByK7wp2mvASLaU
+        </script>
+
+        <script src="{% static 'Maps.js' %}"></script>
+
+    </div>
+</body>
+</html>
